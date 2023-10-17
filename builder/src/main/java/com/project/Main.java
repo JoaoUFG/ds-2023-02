@@ -25,7 +25,9 @@ public class Main {
         assertEquals(endereco.bloco, "Bloco B, 102");
         assertEquals(endereco.quadra, "QI 07");
         assertEquals(endereco.numero, 18);
-
+/*
+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
+ */
         System.out.println("<----------------------------");
 
         }catch (Exception e){
