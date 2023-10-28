@@ -1,25 +1,17 @@
 package br.ufg.modelo;
 
-import br.ufg.annotations.Observado;
-import br.ufg.util.Notificador;
+import br.ufg.interfaces.AbstractObservado;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Observado(caracteristica = "rico")
-public class Politico {
+@br.ufg.annotations.Observado(caracteristica = "rico")
+public class Politico extends AbstractObservado {
 
-    List<Object> observadores = new ArrayList<>();
+    List<Object> amizades = new ArrayList<>();
 
-    private String cargo;
-
-    public void setCargo(String cargo) {
-        Notificador.notificarMeusObservadores(this.observadores);
-        this.cargo = cargo;
+    public void fazerAmizade(Object itemDeAmizade) {
+        amizades.add(itemDeAmizade);
+        this.notificarObservadores();
     }
-
-    public void addObservadores(Object obj){
-        observadores.add(obj);
-   }
-
 }
